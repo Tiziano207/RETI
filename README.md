@@ -1,5 +1,6 @@
 # Reti-dei-Calcolatori-e-Laboratorio---Java-Project
 Introduzione 
+
 Il progetto è stato diviso in tre packages: uno contenete il codice del client, uno il 
 codice del server e l’ultimo contenente metodi “condivisi” accessibili da entrambi. 
 Fa parte del progetto anche la cartella Recovery che contiene le informazioni 
