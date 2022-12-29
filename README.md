@@ -4,6 +4,7 @@ Il progetto è stato diviso in tre packages: uno contenete il codice del client,
 codice del server e l’ultimo contenente metodi “condivisi” accessibili da entrambi. 
 Fa parte del progetto anche la cartella Recovery che contiene le informazioni 
 necessarie per ripristinare lo stato del server a seguito di un riavvio. 
+
 All’interno della cartella Recovery sono presenti: 
  Il Database relativo alle credenziali utente (credentials.json). Il file contiene 
 un oggetto di tipo CredentialDB che a sua volta è costituito da una 
@@ -23,8 +24,10 @@ ConcurrentHashMap<Integer,Post> che contiene tutti i post degli utenti.
 All’interno della cartella recovery sono già presenti dei file per testare il 
 programma, ma l’eventualità in cui la cartella sia vuota è comunque gestita 
 opportunamente. 
+
 Server 
-Il server, all’avvio, ripristina lo stato del sistema leggendo dalla cartella Recovery 
+
+ Il server, all’avvio, ripristina lo stato del sistema leggendo dalla cartella Recovery 
 l’elenco degli utenti registrati, le credenziali, le informazioni dei vari post e i wallet 
 salvandoli in quattro strutture dati separate: users, credentials, posts, e wallets 
 che sono rispettivamente oggetti di tipo UsersDB, CredentialDB, PostDB e 
@@ -33,8 +36,10 @@ Successivamente è implementata la pubblicazione dei metodi remoti tramite
 un’istanza di tipo RegistrationClass, e per quelli con callback con un’istanza 
 ServerNotificationService, infine la connessione TCP viene implementata da 
 un’istanza di MultiThreadedServer. 
+
 Client 
-Il client, all’avvio, inizializza una propria struttura dati locali che contiene l’elenco 
+
+ Il client, all’avvio, inizializza una propria struttura dati locali che contiene l’elenco 
 degli utenti registrati alla piattaforma. 
 Inoltre, inizializza una variabile username che conterrà il nome utente 
 memorizzato previo login. 
@@ -48,9 +53,11 @@ eseguirla in locale o farla gestire al server. L’operazione eseguita in locale
 followers che va a leggere la struttura dati locale dell’utente. 
 Tutte le altre operazioni sono gestite direttamente dal server, ad eccezione della 
 funzione register, che va ad invocare il metodo remoto messo a disposizione dal 
-server. 
+server.
+ 
 RMI- Registrazione alla piattaforma 
-La registrazione di un utente alla piattaforma è gestita tramite il meccanismo RMI. 
+
+ La registrazione di un utente alla piattaforma è gestita tramite il meccanismo RMI. 
 Il server dichiara un’istanza di RegistrationClass che chiama a sua volta il metodo 
 start, il cui scopo è quello di “pubblicare” la funzione all’interno di un registro 
 creato sulla porta 7777 (presa dal file di configurazione); il client inizialmente 
@@ -67,7 +74,8 @@ persistente le credenziali del nuovo utente) e writeOnDBUsers() (per aggiornare
 in memoria persistente il database degli utenti). 
  
 RMI Callbacks- Aggiornamento strutture dati 
-Per prima cosa il server pubblica, mediante NotificationClass.start, i metodi che 
+ 
+ Per prima cosa il server pubblica, mediante NotificationClass.start, i metodi che 
 permettono all’utente di iscriversi e cancellarsi al sistema di notifica. Questo 
 metodo ritorna un’istanza di ServerNotificationClass, classe vera e propria che 
 implementa sia le funzioni di iscrizione e cancellazione alle callback sia la 
@@ -88,8 +96,10 @@ servizio.
 Grazie alla struttura dati sempre aggiornata tramite le callbacks, l’utente può 
 eseguire in locale la richiesta di visualizzare la lista di tutti gli utenti che lo seguono 
 in locale senza doverla inoltrare al server. 
+
 TCP- Gestione richieste 
-Un server TCP dev’essere in grado di gestire richieste provenienti da più client 
+ 
+ Un server TCP dev’essere in grado di gestire richieste provenienti da più client 
 contemporaneamente, ho deciso, quindi, di implementarlo Multithreaded 
 gestendo opportunamente la concorrenza alle strutture dati condivise dai vari 
 Threads: users, wallets, post e credentials . 
@@ -112,8 +122,10 @@ l’elenco delle funzioni disponibili.
 Ogni qual volta si effettuano modifiche allo stato del sistema (nuovo utente 
 registrato, nuovo post creato, …), queste modifiche vengono salvate in memoria 
 persistente. 
+
 UDP Multicast – Rewarding lato Server 
-Il sistema calcola le ricompense passato un determinato tempo indicato nel file di 
+
+ Il sistema calcola le ricompense passato un determinato tempo indicato nel file di 
 config come Update Rewarding. 
 Il Thread salva in una struttura temporanea tutti i post. Dopo aver salvato la 
 struttura dati contenente tutti i post, il Thread va in stato di sleep per il tempo 
@@ -170,11 +182,12 @@ passata per riferimento, deve acquisire la lock implicita dell’oggetto.
 Infine, il campo volatile sulla dichiarazione delle risorse è necessario per 
 assicurarsi che più thread vedano sempre il valore più recente, anche quando il 
 sistema di cache o le ottimizzazioni del compilatore sono al lavoro. 
-Istruzioni 
+
 Librerie Esterne Utilizzate (presenti nella cartella lib): 
  jackson-annotation-2.9.7.jar 
  jackson-core-2.9.7.jar 
  jackson-databind-2.9.7.jar 
+
 Compilazione: javac ./client/*.java ./common/*.java ./server/*.java 
 Esecuzione Server: java server.ServerMainClass 
 Esecuzione Client: java client.ClientMainClass 
