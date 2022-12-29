@@ -1,4 +1,4 @@
-# Reti-dei-Calcolatori-e-Laboratorio---Java-Project
+# WINSOME a reWardINg SOcial Media
 Introduzione 
 
 Il progetto è stato diviso in tre packages: uno contenete il codice del client, uno il 
