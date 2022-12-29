@@ -187,26 +187,45 @@ sistema di cache o le ottimizzazioni del compilatore sono al lavoro.
 Librerie Esterne Utilizzate (presenti nella cartella lib): 
 
  jackson-annotation-2.9.7.jar 
+
  jackson-core-2.9.7.jar 
+ 
  jackson-databind-2.9.7.jar 
  
 Operazioni 
 
  register: username password: per registrare un utente; 
-login: username password: per eseguire il login; 
-logout: username: per eseguire il logout; 
-list users: per mostrare tutti gli Utenti con un almeno un Tag uguale al tuo; 
-list followers: per mostrare i propri followers; 
-list following: per mostrare chi segui; 
-follow user IDutente: per seguire un utente; 
-unfollow user IDutente: per smettere di seguire un utente; 
-view blog: per mostrare il tuo blog; 
-post “Title” “Content”: per postare sul tuo blog; 
-show post IDpost: per mostrare un post; 
-show feed: per mostrare i post di tutti gli utenti che segui; 
-delete post IDpost: per eliminare un post che hai creato; 
-rewin IDpost: per inoltrare un post di un altro utente; 
-rate IDpost +1/-1: per votare un post di un altro utente; 
-comment IDpost comment: per commentare un post di un altro utente; 
-wallet: per vedere il saldo del tuo Wallet; 
-wallet btc: per vedere il saldo del tuo Wallet in BTC; 
+
+ login: username password: per eseguire il login; 
+
+ logout: username: per eseguire il logout; 
+
+ list users: per mostrare tutti gli Utenti con un almeno un Tag uguale al tuo; 
+
+ list followers: per mostrare i propri followers; 
+
+ list following: per mostrare chi segui; 
+
+ follow user IDutente: per seguire un utente; 
+
+ unfollow user IDutente: per smettere di seguire un utente; 
+
+ view blog: per mostrare il tuo blog; 
+
+ post “Title” “Content”: per postare sul tuo blog; 
+
+ show post IDpost: per mostrare un post; 
+
+ show feed: per mostrare i post di tutti gli utenti che segui; 
+
+ delete post IDpost: per eliminare un post che hai creato; 
+
+ rewin IDpost: per inoltrare un post di un altro utente; 
+
+ rate IDpost +1/-1: per votare un post di un altro utente; 
+
+ comment IDpost comment: per commentare un post di un altro utente; 
+
+ wallet: per vedere il saldo del tuo Wallet; 
+
+ wallet btc: per vedere il saldo del tuo Wallet in BTC; 
