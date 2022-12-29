@@ -185,15 +185,14 @@ assicurarsi che più thread vedano sempre il valore più recente, anche quando i
 sistema di cache o le ottimizzazioni del compilatore sono al lavoro. 
 
 Librerie Esterne Utilizzate (presenti nella cartella lib): 
+
  jackson-annotation-2.9.7.jar 
  jackson-core-2.9.7.jar 
  jackson-databind-2.9.7.jar 
-
-Compilazione: javac ./client/*.java ./common/*.java ./server/*.java 
-Esecuzione Server: java server.ServerMainClass 
-Esecuzione Client: java client.ClientMainClass 
+ 
 Operazioni 
-register: username password: per registrare un utente; 
+
+ register: username password: per registrare un utente; 
 login: username password: per eseguire il login; 
 logout: username: per eseguire il logout; 
 list users: per mostrare tutti gli Utenti con un almeno un Tag uguale al tuo; 
