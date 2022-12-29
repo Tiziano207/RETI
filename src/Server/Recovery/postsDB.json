@@ -1,0 +1,24 @@
+{
+  "post" : {
+    "1" : {
+      "idPost" : 1,
+      "autore" : "Mario",
+      "titolo" : "Gattini",
+      "contenuto" : "Che belli i gatti",
+      "valutazione" : 56,
+      "upVotes" : [ "Luigi" , "Gino" ],
+      "downVotes" : [ "Sara" ],
+      "comments" : [ "Luigi - S?" ]
+    },
+    "2" : {
+      "idPost" : 2,
+      "autore" : "Luigi",
+      "titolo" : "Pasta carbonara",
+      "contenuto" : "Pancetta Pepe Pecorino Romano Uova",
+      "valutazione" : 26,
+      "upVotes" : [ "Sara" ],
+      "downVotes" : [ "Anna" ],
+      "comments" : [ ]
+    }
+  }
+}

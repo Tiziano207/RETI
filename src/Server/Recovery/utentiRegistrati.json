@@ -1,0 +1,18 @@
+{
+  "tags" : {
+    "Gino" : [ "Gatti", "Cani", "Musica" ],
+    "Luigi" : [ "Cibo" ],
+    "Sara" : [ "Musica", "Cibo" ],
+    "Antonio" : [ "Foto", "Moda" ],
+    "Mario" : [ "Cat", "Gatti", "Cani" ],
+    "Anna" : [ "Natura", "Gatti", "Musica" ]
+  },
+  "db" : {
+    "Gino" : [ ],
+    "Luigi" : [ ],
+    "Sara" : [ "Luigi" ],
+    "Antonio" : [ ],
+    "Mario" : [ "Luigi" ],
+    "Anna" : [ ]
+  }
+}

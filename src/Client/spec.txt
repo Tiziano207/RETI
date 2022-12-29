@@ -1,0 +1,7 @@
+- Lettura del file di config
+- Ciclo while(true) per le richieste
+- Apertura connessione TCP
+- Apertura connessione RMI [Login]
+- Meccanismo RMI callback
+- Iscrizione al gruppo Multicast [UDP Multicast]
+- Strutture locali
